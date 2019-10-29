@@ -61,7 +61,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 #TARGET_PREBUILT_KERNEL := device/samsung/sltexx/kernel
 TARGET_KERNEL_CONFIG := cm_exynos5430-slte_defconfig
-TARGET_KERNEL_SOURCE := kernel/samsung/exynos5420
+TARGET_KERNEL_SOURCE := kernel/samsung/slte
 # hardware/samsung_slsi/exynos/libhdmi_legacy
 TARGET_LINUX_KERNEL_VERSION := 3.10
 
