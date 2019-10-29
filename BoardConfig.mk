@@ -48,6 +48,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 #BOARD_KERNEL_SEPARATED_DT := true
 # Extracted with libbootimg
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --dt device/samsung/sltexx/dtb.img
+BOARD_KERNEL_IMAGE_NAME := zImage
 
 # fix this up by examining /proc/mtd on a running device
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00a00000
@@ -58,9 +59,9 @@ BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_CACHEIMAGE_PARTITION_SIZE := 209715200
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-#TARGET_PREBUILT_KERNEL := device/samsung/slte/kernel
+#TARGET_PREBUILT_KERNEL := device/samsung/sltexx/kernel
 TARGET_KERNEL_CONFIG := cm_exynos5430-slte_defconfig
-TARGET_KERNEL_SOURCE := kernel/samsung/slte
+TARGET_KERNEL_SOURCE := kernel/samsung/exynos5420
 # hardware/samsung_slsi/exynos/libhdmi_legacy
 TARGET_LINUX_KERNEL_VERSION := 3.10
 
@@ -189,11 +190,11 @@ BOARD_USES_SCALER := true
 BOARD_USES_DT := true
 BOARD_USES_DT_SHORTNAME := true
 # frameworks/av/camera, camera blob support
-TARGET_GLOBAL_CFLAGS += -DSAMSUNG_CAMERA_HARDWARE
+#TARGET_GLOBAL_CFLAGS += -DSAMSUNG_CAMERA_HARDWARE
 # frameworks/av/media/libstagefright, for libwvm.so
-TARGET_GLOBAL_CFLAGS += -DADD_LEGACY_ACQUIRE_BUFFER_SYMBOL
+#TARGET_GLOBAL_CFLAGS += -DADD_LEGACY_ACQUIRE_BUFFER_SYMBOL
 # frameworks/av/media/libstagefright
-TARGET_GLOBAL_CFLAGS += -DUSE_NATIVE_SEC_NV12TILED
+#TARGET_GLOBAL_CFLAGS += -DUSE_NATIVE_SEC_NV12TILED
 BOARD_USE_SAMSUNG_CAMERAFORMAT_NV21 := true
 # frameworks/av/{cameraserver,libstagefright,mediaserver}
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
@@ -228,7 +229,7 @@ BOARD_MODEM_TYPE := xmm7260
 # RIL.java overwrite
 BOARD_RIL_CLASS := ../../../$(LOCAL_PATH)/ril
 # frameworks/native/libs/binder/Parcel.cpp
-TARGET_GLOBAL_CFLAGS += -DDISABLE_ASHMEM_TRACKING
+#TARGET_GLOBAL_CFLAGS += -DDISABLE_ASHMEM_TRACKING
 
 ### SENSORS
 TARGET_NO_SENSOR_PERMISSION_CHECK := true
